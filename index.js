@@ -17,14 +17,12 @@ app.use(express.json())
 app.use('/',(req,res)=>{
 res.send("hello ramshish it is generated on get reqest of URl(loacalhost:5000/) ")
 })
-// BUILD REMOVE FROM CONGFIG
-// // seond your to check route 
-// app.get('/',(req,res)=>{
-//   res.send("this shown whenever  your requst is / or deafult")
-// })
+app.use('/info', (req,res)=>{
+   return (" this is on on /infor url ");
+})
 // Available Routes ksi aur folder se rout ko lekar hit kar rah hua
-// app.use(route,location) to hit rote from other file
-// app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
+app.use(route,location) //to hit rote from other file
+app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
 // app.use('/api/notes', require('./routes/notes'))
 
 app.listen(port, () => {
