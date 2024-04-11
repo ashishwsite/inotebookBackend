@@ -11,6 +11,8 @@ app.use(express.json())
 app.use('/',(req,res)=>{
 res.send("hello ramshish it is generated on get reqest of URl(loacalhost:5000/) ")
 })
+// BUILD REMOVE FROM CONGFIG
+// "builds":[{"src": "./index.js","use":"@vercel/node"}],
 // // seond your to check route 
 // app.get('/',(req,res)=>{
 //   res.send("this shown whenever  your requst is / or deafult")
