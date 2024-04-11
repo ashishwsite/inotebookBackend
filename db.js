@@ -8,13 +8,11 @@ const mongoURI='mongodb+srv://ashish:12345@cluster0.g45nrog.mongodb.net/inoteboo
 const connectToMongo = async ()=>{
         try{
    await mongoose.connect(mongoURI)
-      
         console.log("mogoose is connect")
-} catch(error           ){
+} catch(error ){
         console.log("error while connecation with mongodb",error);
 }
     
     
 } 
-
 module.exports = connectToMongo;

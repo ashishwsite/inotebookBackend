@@ -24,8 +24,8 @@ res.send("hello ramshish it is generated on get reqest of URl(loacalhost:5000/) 
 // })
 // Available Routes ksi aur folder se rout ko lekar hit kar rah hua
 // app.use(route,location) to hit rote from other file
-app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
-app.use('/api/notes', require('./routes/notes'))
+// app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
+// app.use('/api/notes', require('./routes/notes'))
 
 app.listen(port, () => {
   console.log(`iNotebook backend listening at http://localhost:${port}`)
