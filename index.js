@@ -3,8 +3,13 @@ const express = require('express')
 var cors = require('cors') 
 connectToMongo();
 const app = express()
-const port = 5000
-app.use(cors())
+const port =process.env.PORT|| 5000
+const corsconfig={
+  origin:"*",
+  Credential:true,
+  methods:["GET","POST","PUT","DELETE"],
+}
+app.use(cors(corsconfig))
 const path = require("path");
 app.use(express.json())
 // // first url which to check the server by defalut this requst  through this url is 
