@@ -6,6 +6,6 @@ router.get('/', (req,res)=>{
     // res.send(req.body)
     // console.log(req.body)
     // res.json(req.body? req.body :a)
-    res.json({"app-use par request":"default page me "})
+    res.send({"app-use par request":"default page me ","no issue in app .use ":"only json formate allow "})
 })
 module.exports=router

@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../models/User');
 const router = express.Router();// router ka used karna hai route banake liye 
 const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var fetchuser = require('../middleware/fetchuser');
 
@@ -37,8 +37,9 @@ router.post('/createuser', [
     if (user) {
       return res.status(400).json({ error: "Sorry a user with this email already exists" })
     }
-    const salt = await bcrypt.genSalt(10);
-    const secPass = await bcrypt.hash(req.body.password, salt);
+    // const salt = await bcrypt.genSalt(10); // this genrete salt which adden in password for safty purpose
+    // const secPass = await bcrypt.hash(req.body.password, salt);
+    const secPass=req.body.password;
 
     // Create a new user in ewxisting databse using create()
     user = await User.create({
@@ -85,8 +86,9 @@ router.post('/login', [
       return res.status(400).json({ error: "Please try to login with correct credentials" });
     }
 
-    const passwordCompare = await bcrypt.compare(password, user.password);// password ko match kar raha hu
-    if (!passwordCompare) {
+    // const passwordCompare = await bcrypt.compare(password, user.password);// password ko match kar raha hu
+    
+    if (user.password!=password) {
       success = false
       return res.status(400).json({ success, error: "Please try to login with correct credentials" });
     }

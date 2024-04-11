@@ -3,7 +3,7 @@ const express = require('express')
 var cors = require('cors') 
 connectToMongo();
 const app = express()
-const port =process.env.PORT|| 5000
+const port =process.env.PORT|| 5000 // chandge to 5000 because in coolletion 5000 is save 
 const path = require("path");
 const corsconfig={
   origin:"*",
@@ -26,7 +26,7 @@ app.get('/way',(req,res)=>{
 app.use('/api',require('./routes/default'))
 // Available Routes ksi aur folder se rout ko lekar hit kar rah hua
 // app.use(route,location) //to hit rote from other file
-// app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
+app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
 // app.use('/api/notes', require('./routes/notes'))
 
 app.listen(port, () => {
