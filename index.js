@@ -21,7 +21,7 @@ res.send("hello ramshish it is generated on get reqest of URl(loacalhost:5000/) 
 //    return (" this is on on /infor url ");
 // })
 // Available Routes ksi aur folder se rout ko lekar hit kar rah hua
-app.use(route,location) //to hit rote from other file
+// app.use(route,location) //to hit rote from other file
 // app.use('/api/auth', require('./routes/auth'))// require(location of file where route is presnt)
 // app.use('/api/notes', require('./routes/notes'))
 
