@@ -21,7 +21,7 @@ app.get('/info', (req,res)=>{
    return res.send (" this is on on /infor url and send using return res,send() ");
 })
 app.get('/way',(req,res)=>{
-  res.json({"res.send":"true","res.json":true,"return res.json":"true"})
+  res.json({"res.send":"true","res.json":"true","return res.json":"true"})
 })
 // Available Routes ksi aur folder se rout ko lekar hit kar rah hua
 // app.use(route,location) //to hit rote from other file
