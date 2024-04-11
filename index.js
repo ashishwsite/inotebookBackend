@@ -9,6 +9,7 @@ const corsconfig={
   Credential:true,
   methods:["GET","POST","PUT","DELETE"],
 }
+app.options("",cors(corsconfig));
 app.use(cors(corsconfig))
 const path = require("path");
 app.use(express.json())
